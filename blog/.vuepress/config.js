@@ -1,17 +1,11 @@
 module.exports = {
   title: "kang",
   description: "This is a blog example built by VuePress",
-  theme: "@vuepress/theme-blog", // OR shortcut: @vuepress/blog
+  theme: "@vuepress/theme-blog",
   themeConfig: {
-    /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#modifyblogpluginoptions
-     */
     modifyBlogPluginOptions(blogPluginOptions) {
       return blogPluginOptions;
     },
-    /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#nav
-     */
     nav: [
       {
         text: "前端",
@@ -22,14 +16,11 @@ module.exports = {
         link: "/tag/",
       },
     ],
-    /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#footer
-     */
     footer: {
       contact: [
         {
           type: "github",
-          link: "https://github.com/ulivz",
+          link: "https://github.com/khjLOVEzlp",
         },
       ],
       copyright: [
@@ -40,4 +31,23 @@ module.exports = {
       ],
     },
   },
+  plugins: [
+    [
+      "@vuepress/blog",
+      {
+        directories: [
+          {
+            id: "post",
+            dirname: "_posts",
+            path: "/",
+          },
+          {
+            id: "tags",
+            dirname: "tag",
+            path: "/tag/",
+          },
+        ],
+      },
+    ],
+  ],
 };
