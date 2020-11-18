@@ -1,5 +1,5 @@
 module.exports = {
-  title: "kang",
+  title: "programmer",
   description: "This is a blog example built by VuePress",
   theme: "@vuepress/theme-blog",
   themeConfig: {
@@ -8,11 +8,11 @@ module.exports = {
     },
     nav: [
       {
-        text: "前端",
+        text: "JavaScript",
         link: "/",
       },
       {
-        text: "文集",
+        text: "HTML+CSS",
         link: "/tag/",
       },
     ],
@@ -48,6 +48,9 @@ module.exports = {
             id: "tags",
             dirname: "tag",
             path: "/tag/",
+            pagination: {
+              lengthPerPage: 5,
+            },
           },
         ],
       },

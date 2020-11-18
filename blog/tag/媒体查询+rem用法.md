@@ -11,9 +11,9 @@ location: Shenzhen
 
 - 计算 rem 方法：
 - 结合媒体查询 -> 随着设备的改变 更改 html font-size 的值。
-- ​
+
 - 媒体查询确定范围？？
-- ​
+
 - 移动端设计图 ： 640px 750px 1080px;
 - dpr 2 2 3
 - 范围 320px 375px
