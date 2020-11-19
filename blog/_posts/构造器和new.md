@@ -89,3 +89,39 @@ function BigUser() {
 
 alert(new BigUser().name); // Godzilla，得到了那个对象
 ```
+
+这里有一个 return 为空的例子：
+
+```javascript
+function SmallUser() {
+  this.name = "John";
+
+  return; // <-- 返回 this
+}
+
+alert(new SmallUser().name); // John
+```
+
+通常构造器没有 return 语句。这里主要为了完整性而提及返回对象的特殊行为
+
+### 构造器中的方法
+
+使用构造器函数来创建对象会带来很大的灵活性，构造函数可能有一些参数，这些参数定义了如何构造对象以及要放入什么
+
+不仅可以将属性添加到 this 中，还可以添加方法
+
+例如，下面的 new User(name) 用给定的 name 和方法 sayHi 创建了一个对象
+
+```javascript
+function User(name) {
+  this.name = name;
+
+  sayHi() {
+    alert(this.name)
+  }
+}
+
+let john = new User("John");
+
+john.sayHi(); // John
+```
