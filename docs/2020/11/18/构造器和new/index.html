@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>构造器和操作符“new” | BLOG</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    
+    <meta name="description" content="
+常规的 {...} 语法允许创建一个对象。但是我们经常需要创建许多类似的对象，例如多个用户或菜单项等。
+这可以使用构造函数和 "new" 操作符来实现
+构造函数
+构造函数在技术上是常规函数，不过有两个约定：
+它们的命名以大写字母开头
+只能通过“new”操作符来执行
+例如：
+`javascript
+function Cat(na ...">
+    <link rel="preload" href="/assets/css/0.styles.10d95b77.css" as="style"><link rel="preload" href="/assets/js/app.66d3535f.js" as="script"><link rel="preload" href="/assets/js/6.26d0b161.js" as="script"><link rel="preload" href="/assets/js/3.de88a05b.js" as="script"><link rel="preload" href="/assets/js/20.f8717d71.js" as="script"><link rel="prefetch" href="/assets/js/10.0fcfb244.js"><link rel="prefetch" href="/assets/js/11.d0596d0a.js"><link rel="prefetch" href="/assets/js/12.15861cb1.js"><link rel="prefetch" href="/assets/js/13.b589a0cd.js"><link rel="prefetch" href="/assets/js/14.08960885.js"><link rel="prefetch" href="/assets/js/15.a3442096.js"><link rel="prefetch" href="/assets/js/16.cc995c50.js"><link rel="prefetch" href="/assets/js/17.9899d610.js"><link rel="prefetch" href="/assets/js/18.50ba8e3d.js"><link rel="prefetch" href="/assets/js/19.dfd05aee.js"><link rel="prefetch" href="/assets/js/21.457e2915.js"><link rel="prefetch" href="/assets/js/22.750558e8.js"><link rel="prefetch" href="/assets/js/23.2f1d6de7.js"><link rel="prefetch" href="/assets/js/24.2d59944a.js"><link rel="prefetch" href="/assets/js/25.ee16fb51.js"><link rel="prefetch" href="/assets/js/26.adeb5777.js"><link rel="prefetch" href="/assets/js/4.b6118ee6.js"><link rel="prefetch" href="/assets/js/5.b308712f.js"><link rel="prefetch" href="/assets/js/7.f7f804cf.js"><link rel="prefetch" href="/assets/js/8.ad47aaa6.js"><link rel="prefetch" href="/assets/js/9.21cea581.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.c6dc7ffd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.10d95b77.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">BLOG </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">JS</a></li><li class="nav-item"><a href="/tag/" class="nav-link">HTML</a></li><li class="nav-item"><a href="/linux/" class="nav-link">LINUX</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">BLOG </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">JS</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">HTML</a></li><li class="mobile-nav-item"><a href="/linux/" class="nav-link">LINUX</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        构造器和操作符“new”
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">kang</span> <span itemprop="address">   in shenzhen</span></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-11-18T00:00:00.000Z">
+      Wed Nov 18 2020
+    </time></div> <!----></div></header> <div itemprop="articleBody" class="content__default"><h2 id="构造器和操作符-new"><a href="#构造器和操作符-new" class="header-anchor">#</a> 构造器和操作符“new”</h2> <p>常规的 {...} 语法允许创建一个对象。但是我们经常需要创建许多类似的对象，例如多个用户或菜单项等。</p> <p>这可以使用构造函数和 &quot;new&quot; 操作符来实现</p> <h3 id="构造函数"><a href="#构造函数" class="header-anchor">#</a> 构造函数</h3> <p>构造函数在技术上是常规函数，不过有两个约定：</p> <ol><li>它们的命名以大写字母开头</li> <li>只能通过“new”操作符来执行</li></ol> <p>例如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Cat</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> cat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token string">&quot;小白&quot;</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span>cat<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 小白</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>cat<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 18</span>
+</code></pre></div><p>当一个函数使用“new”操作符来执行时，它按照以下步骤：</p> <ol><li>一个新的空对象被创建并分配给 this</li> <li>函数体执行， 通常它会修改 this，为其添加新的属性</li> <li>返回 this 的值</li></ol> <p>new User(...) 做的就是类似的事情：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Cat</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// this = {};（隐式创建）</span>
+
+  <span class="token comment">// 添加属性到 this</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+
+  <span class="token comment">// return this;（隐式返回）</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>所以 new Cat(&quot;小白&quot;, 18) 的结果是相同的对象：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;小白&quot;</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>如果我们想创建其他用户，我们可以调用 new Cat(&quot;小黄&quot;, 20)，new Cat(&quot;小黑&quot;, 22) 等。比每次都使用字面量创建要短得多，而且更易于阅读</p> <p>这是构造器的主要目的 —— 实现可重用的对象创建代码</p> <p>从技术上讲，任何函数都可以用作构造器。即：任何函数都可以通过 new 来运行，它会执行上面的算法。“首字母大写”是一个共同的约定，以明确表示一个函数将被使用 new 来运行</p> <h3 id="构造器的-return"><a href="#构造器的-return" class="header-anchor">#</a> 构造器的 return</h3> <p>通常，构造器没有 return 语句。它们的任务是将所有必要的东西写入 this，并自动转换为结果</p> <p>但是，如果这有一个 return 语句，那么规则就简单了：</p> <ul><li>如果 return 返回的是一个对象，则返回这个对象，而不是 this</li> <li>如果 return 返回的是一个原始类型，则忽略</li></ul> <p>带有对象的 return 返回该对象，在所有其他情况下返回 this</p> <p>例如，这里 return 通过返回一个对象覆盖 this：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">BigUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;Godzilla&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// &lt;-- 返回这个对象</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BigUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Godzilla，得到了那个对象</span>
+</code></pre></div><p>这里有一个 return 为空的例子：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">SmallUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token comment">// &lt;-- 返回 this</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">SmallUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// John</span>
+</code></pre></div><p>通常构造器没有 return 语句。这里主要为了完整性而提及返回对象的特殊行为</p> <h3 id="构造器中的方法"><a href="#构造器中的方法" class="header-anchor">#</a> 构造器中的方法</h3> <p>使用构造器函数来创建对象会带来很大的灵活性，构造函数可能有一些参数，这些参数定义了如何构造对象以及要放入什么</p> <p>不仅可以将属性添加到 this 中，还可以添加方法</p> <p>例如，下面的 new User(name) 用给定的 name 和方法 sayHi 创建了一个对象</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">User</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+
+  <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> john <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">&quot;John&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+john<span class="token punctuation">.</span><span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// John</span>
+</code></pre></div></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#构造器和操作符-new" title="构造器和操作符“new”">构造器和操作符“new”</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#构造函数" title="构造函数">构造函数</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#构造器的-return" title="构造器的 return">构造器的 return</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#构造器中的方法" title="构造器中的方法">构造器中的方法</a></div></div></div></div> <footer class="footer" data-v-fdbf4940><div class="footer-left-wrap" data-v-fdbf4940><ul class="contact" data-v-fdbf4940><li class="contact-item" data-v-fdbf4940><a href="https://github.com/khjLOVEzlp" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-fdbf4940><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-fdbf4940><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-fdbf4940></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-fdbf4940><ul class="copyright" data-v-fdbf4940><li class="copyright-item" data-v-fdbf4940><a href="/2020/11/18/%E6%9E%84%E9%80%A0%E5%99%A8%E5%92%8Cnew/.html" class="nav-link" data-v-fdbf4940>MIT Licensed | Copyright © 2018-present Vue.js</a></li></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.66d3535f.js" defer></script><script src="/assets/js/6.26d0b161.js" defer></script><script src="/assets/js/3.de88a05b.js" defer></script><script src="/assets/js/20.f8717d71.js" defer></script>
+  </body>
+</html>

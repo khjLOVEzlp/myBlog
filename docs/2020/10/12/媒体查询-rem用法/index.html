@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>媒体查询+rem用法 | BLOG</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    
+    <meta name="description" content="计算方法
+计算 rem 方法：
+结合媒体查询 -> 随着设备的改变 更改 html font-size 的值。
+媒体查询确定范围？？
+移动端设计图 ： 640px 750px 1080px;
+dpr 2 2 3
+范围 320px 375px
+`css
+@media screen and (max-width: 320px) ...">
+    <link rel="preload" href="/assets/css/0.styles.10d95b77.css" as="style"><link rel="preload" href="/assets/js/app.66d3535f.js" as="script"><link rel="preload" href="/assets/js/6.26d0b161.js" as="script"><link rel="preload" href="/assets/js/3.de88a05b.js" as="script"><link rel="preload" href="/assets/js/26.adeb5777.js" as="script"><link rel="prefetch" href="/assets/js/10.0fcfb244.js"><link rel="prefetch" href="/assets/js/11.d0596d0a.js"><link rel="prefetch" href="/assets/js/12.15861cb1.js"><link rel="prefetch" href="/assets/js/13.b589a0cd.js"><link rel="prefetch" href="/assets/js/14.08960885.js"><link rel="prefetch" href="/assets/js/15.a3442096.js"><link rel="prefetch" href="/assets/js/16.cc995c50.js"><link rel="prefetch" href="/assets/js/17.9899d610.js"><link rel="prefetch" href="/assets/js/18.50ba8e3d.js"><link rel="prefetch" href="/assets/js/19.dfd05aee.js"><link rel="prefetch" href="/assets/js/20.f8717d71.js"><link rel="prefetch" href="/assets/js/21.457e2915.js"><link rel="prefetch" href="/assets/js/22.750558e8.js"><link rel="prefetch" href="/assets/js/23.2f1d6de7.js"><link rel="prefetch" href="/assets/js/24.2d59944a.js"><link rel="prefetch" href="/assets/js/25.ee16fb51.js"><link rel="prefetch" href="/assets/js/4.b6118ee6.js"><link rel="prefetch" href="/assets/js/5.b308712f.js"><link rel="prefetch" href="/assets/js/7.f7f804cf.js"><link rel="prefetch" href="/assets/js/8.ad47aaa6.js"><link rel="prefetch" href="/assets/js/9.21cea581.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.c6dc7ffd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.10d95b77.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">BLOG </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">JS</a></li><li class="nav-item"><a href="/tag/" class="nav-link">HTML</a></li><li class="nav-item"><a href="/linux/" class="nav-link">LINUX</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">BLOG </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">JS</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">HTML</a></li><li class="mobile-nav-item"><a href="/linux/" class="nav-link">LINUX</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        媒体查询+rem用法
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">Kang</span> <span itemprop="address">   in Shenzhen</span></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-10-12T00:00:00.000Z">
+      Mon Oct 12 2020
+    </time></div> <!----></div></header> <div itemprop="articleBody" class="content__default"><h2 id="媒体查询-rem"><a href="#媒体查询-rem" class="header-anchor">#</a> 媒体查询+rem</h2> <h3 id="计算方法"><a href="#计算方法" class="header-anchor">#</a> 计算方法</h3> <ul><li><p>计算 rem 方法：</p></li> <li><p>结合媒体查询 -&gt; 随着设备的改变 更改 html font-size 的值。</p></li> <li><p>媒体查询确定范围？？</p></li> <li><p>移动端设计图 ： 640px 750px 1080px;</p></li> <li><p>dpr 2 2 3</p></li> <li><p>范围 320px 375px</p></li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 320px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">html</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 321px<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 375px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">html</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 376px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">html</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="实现流程"><a href="#实现流程" class="header-anchor">#</a> 实现流程</h3> <div class="language- extra-class"><pre class="language-text"><code>ui设计图   750px
+​
+dpr    2
+​
+ps量出height   88px;
+​
+88px / 2 ==  44px;
+​
+设计图 750px
+
+dpr  2
+​
+750px  /  2 == 375px
+​
+44px / 14px == rem
+</code></pre></div><h2 id="vw-rem"><a href="#vw-rem" class="header-anchor">#</a> vw+rem</h2> <ul><li>为了方便计算，可以把 html 的 font-size 值 设置成 100px; 1rem == 100px;</li> <li>100px 是一个固定值，没办法随着设备的改变而改变。</li> <li>能跟随设备发生改变</li> <li>vw 根据视口大小进行改变。</li> <li>100px == ?vw</li></ul> <h3 id="根据视图分配情况"><a href="#根据视图分配情况" class="header-anchor">#</a> 根据视图分配情况</h3> <ul><li>第一种情况：
+如果 UI 设计图为 640px
+考虑的 dpr 2
+适配的核心设备 320px;
+100vw == 320px
+1vw == 3.2px
+?vw == 100px
+31.25vw == 100px</li></ul> <ul><li>第二种情况
+如果设计图为 750px
+考虑 dpr 2
+适配的核心设备 375px
+100vw == 375px
+1vw == 3.75px
+?vw == 100px
+26.67vw == 100px;</li></ul> <h3 id="设置方法"><a href="#设置方法" class="header-anchor">#</a> 设置方法</h3> <ul><li>如果设计图为 640px html 设置{font-size:31.25vw}</li> <li>如果设计图为 750px html 设置{font-size:26.67vw}</li></ul> <h3 id="计算流程"><a href="#计算流程" class="header-anchor">#</a> 计算流程</h3> <ul><li>vw 结合 rem 计算流程</li> <li>设计图 640px</li> <li>所以 html 设置{font-size:31.25vw;}</li> <li>ps 中获取 height 88px</li> <li>dpr 2</li> <li>88 / 2 == 44px</li> <li>44 / 100 == 0.44rem;</li></ul></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#媒体查询-rem" title="媒体查询+rem">媒体查询+rem</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#计算方法" title="计算方法">计算方法</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#实现流程" title="实现流程">实现流程</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#vw-rem" title="vw+rem">vw+rem</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#根据视图分配情况" title="根据视图分配情况">根据视图分配情况</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#设置方法" title="设置方法">设置方法</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#计算流程" title="计算流程">计算流程</a></div></div></div></div> <footer class="footer" data-v-fdbf4940><div class="footer-left-wrap" data-v-fdbf4940><ul class="contact" data-v-fdbf4940><li class="contact-item" data-v-fdbf4940><a href="https://github.com/khjLOVEzlp" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-fdbf4940><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-fdbf4940><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-fdbf4940></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-fdbf4940><ul class="copyright" data-v-fdbf4940><li class="copyright-item" data-v-fdbf4940><a href="/2020/10/12/%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2-rem%E7%94%A8%E6%B3%95/.html" class="nav-link" data-v-fdbf4940>MIT Licensed | Copyright © 2018-present Vue.js</a></li></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.66d3535f.js" defer></script><script src="/assets/js/6.26d0b161.js" defer></script><script src="/assets/js/3.de88a05b.js" defer></script><script src="/assets/js/26.adeb5777.js" defer></script>
+  </body>
+</html>

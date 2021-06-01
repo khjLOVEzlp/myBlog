@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>深拷贝与浅拷贝 | BLOG</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    
+    <meta name="description" content="
+与原始类型相比，对象的根本区别之一是对象是“通过引用”被存储和复制的，与原始类型值相反：字符串，数字，布尔值等 —— 始终是以“整体值”的形式被复制的
+这里我们将 message 复制到 phrase：
+`javascript
+let message = "Hello!";
+let phrase = message;
+`
+结果我们就有了两个独立的变量，每个都 ...">
+    <link rel="preload" href="/assets/css/0.styles.10d95b77.css" as="style"><link rel="preload" href="/assets/js/app.66d3535f.js" as="script"><link rel="preload" href="/assets/js/6.26d0b161.js" as="script"><link rel="preload" href="/assets/js/3.de88a05b.js" as="script"><link rel="preload" href="/assets/js/21.457e2915.js" as="script"><link rel="prefetch" href="/assets/js/10.0fcfb244.js"><link rel="prefetch" href="/assets/js/11.d0596d0a.js"><link rel="prefetch" href="/assets/js/12.15861cb1.js"><link rel="prefetch" href="/assets/js/13.b589a0cd.js"><link rel="prefetch" href="/assets/js/14.08960885.js"><link rel="prefetch" href="/assets/js/15.a3442096.js"><link rel="prefetch" href="/assets/js/16.cc995c50.js"><link rel="prefetch" href="/assets/js/17.9899d610.js"><link rel="prefetch" href="/assets/js/18.50ba8e3d.js"><link rel="prefetch" href="/assets/js/19.dfd05aee.js"><link rel="prefetch" href="/assets/js/20.f8717d71.js"><link rel="prefetch" href="/assets/js/22.750558e8.js"><link rel="prefetch" href="/assets/js/23.2f1d6de7.js"><link rel="prefetch" href="/assets/js/24.2d59944a.js"><link rel="prefetch" href="/assets/js/25.ee16fb51.js"><link rel="prefetch" href="/assets/js/26.adeb5777.js"><link rel="prefetch" href="/assets/js/4.b6118ee6.js"><link rel="prefetch" href="/assets/js/5.b308712f.js"><link rel="prefetch" href="/assets/js/7.f7f804cf.js"><link rel="prefetch" href="/assets/js/8.ad47aaa6.js"><link rel="prefetch" href="/assets/js/9.21cea581.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.c6dc7ffd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.10d95b77.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">BLOG </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">JS</a></li><li class="nav-item"><a href="/tag/" class="nav-link">HTML</a></li><li class="nav-item"><a href="/linux/" class="nav-link">LINUX</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">BLOG </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">JS</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">HTML</a></li><li class="mobile-nav-item"><a href="/linux/" class="nav-link">LINUX</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        深拷贝与浅拷贝
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">kang</span> <span itemprop="address">   in shenzhen</span></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-11-18T00:00:00.000Z">
+      Wed Nov 18 2020
+    </time></div> <!----></div></header> <div itemprop="articleBody" class="content__default"><h2 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="header-anchor">#</a> 深拷贝与浅拷贝</h2> <p>与原始类型相比，对象的根本区别之一是对象是“通过引用”被存储和复制的，与原始类型值相反：字符串，数字，布尔值等 —— 始终是以“整体值”的形式被复制的</p> <p>这里我们将 message 复制到 phrase：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token string">&quot;Hello!&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> phrase <span class="token operator">=</span> message<span class="token punctuation">;</span>
+</code></pre></div><p>结果我们就有了两个独立的变量，每个都存储着字符串 &quot;Hello!&quot;</p> <p>但是，对象不是这样的</p> <p>赋值了对象的变量存储的不是对象本身，而是该对象“在内存中的地址”，换句话说就是对该对象的“引用”</p> <p>当一个对象变量被复制 —— 引用则被复制，而该对象并没有被复制</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;张三&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> admin <span class="token operator">=</span> user<span class="token punctuation">;</span> <span class="token comment">// 复制引用</span>
+</code></pre></div><p>现在我们有了两个变量，它们保存的都是对同一个对象的引用</p> <p>我们可以通过其中任意一个变量来访问该对象并修改它的内容</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;张三&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> admin <span class="token operator">=</span> user<span class="token punctuation">;</span>
+
+admin<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;李四&quot;</span><span class="token punctuation">;</span> <span class="token comment">// 通过 &quot;admin&quot; 引用来修改</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '李四'，修改能通过 &quot;user&quot; 引用看到</span>
+</code></pre></div><p>这就像我们有个带两把钥匙的柜子，并使用其中一把钥匙（admin）来打开它。那么，我们如果之后用另外一把钥匙（user），则也能看到更改</p> <h3 id="通过引用来比较"><a href="#通过引用来比较" class="header-anchor">#</a> 通过引用来比较</h3> <p>仅当两个对象为同一对象时，两者才相等。</p> <p>例如，这里 a 和 b 两个变量都引用同一个对象，所以它们相等：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span> <span class="token comment">//复制引用</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span>a <span class="token operator">==</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true，都引用同一对象</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>a <span class="token operator">===</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre></div><p>两个独立的对象则并不相等，即使它们看起来很像（都为空）：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// 两个独立的对象</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span>a <span class="token operator">==</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+</code></pre></div><h3 id="object-assign"><a href="#object-assign" class="header-anchor">#</a> Object.assign</h3> <p>如果我们想要复制一个对象，那么就需要创建一个新对象，并通过遍历现有属性的结构，在原始类型值的层面，将其复制到新对象，以复制已有对象的结构</p> <p>就像这样：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;张三&quot;</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> clone <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// 新的空对象</span>
+
+<span class="token comment">// 将user中所有的属性拷贝到其中</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  clone<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> user<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 现在 clone 是带有相同内容的完全独立的对象</span>
+clone<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;李四&quot;</span><span class="token punctuation">;</span> <span class="token comment">// 改变了其中的数据</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 原来的对象中的 name 属性依然是 张三</span>
+</code></pre></div><p>我们也可以使用 Object.assign 方法来达成同样的效果</p> <p>语法是：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>dest<span class="token punctuation">,</span> <span class="token punctuation">[</span>src1<span class="token punctuation">,</span> src2<span class="token punctuation">,</span> src3<span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>第一个参数 dest 是指目标对象</li> <li>更后面的参数 src1, ..., srcN（可按需传递多个参数）是源对象</li> <li>该方法将所有源对象的属性拷贝到目标对象 dest 中。换句话说，从第二个开始的所有参数的属性都被拷贝到第一个参数的对象中</li> <li>调用结果返回 dest</li></ul> <p>例如，我们可以用它来合并多个对象：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;张三&quot;</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span> canView<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span> canEdit<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> obj1<span class="token punctuation">,</span> obj2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 现在 user = { name: &quot;John&quot;, canView: true, canEdit: true }</span>
+</code></pre></div><p>用 Object.assign 代替 for..in 循环来进行简单克隆：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;张三&quot;</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> clone <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>它将 user 中的所有属性拷贝到了一个空对象中，并返回这个新的对象</p> <h3 id="深层克隆"><a href="#深层克隆" class="header-anchor">#</a> 深层克隆</h3> <p>到现在为止，我们都假设 user 的所有属性均为原始类型。但属性可以是对其他对象的引用。那应该怎样处理它们呢</p> <p>例如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;张三&quot;</span><span class="token punctuation">,</span>
+  sizes<span class="token operator">:</span> <span class="token punctuation">{</span>
+    height<span class="token operator">:</span> <span class="token number">182</span><span class="token punctuation">,</span>
+    width<span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> clone <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>sizes <span class="token operator">===</span> clone<span class="token punctuation">.</span>sizes<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true，同一个对象</span>
+
+<span class="token comment">// user 和 clone 分享同一个 sizes</span>
+user<span class="token punctuation">.</span>sizes<span class="token punctuation">.</span>width<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// 通过其中一个改变属性值</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>clone<span class="token punctuation">.</span>sizes<span class="token punctuation">.</span>width<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 51，能从另外一个看到变更的结果</span>
+</code></pre></div><p>现在这样拷贝 clone.sizes = user.sizes 已经不足够了，因为 user.sizes 是个对象，它会以引用形式被拷贝。因此 clone 和 user 会共用一个 sizes</p> <p>实现深拷贝：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 1. JOSN.stringify()/JSON.parse()</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;张三&quot;</span><span class="token punctuation">,</span>
+  sizes<span class="token operator">:</span> <span class="token punctuation">{</span>
+    height<span class="token operator">:</span> <span class="token number">182</span><span class="token punctuation">,</span>
+    width<span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 2. 递归拷贝</span>
+<span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> copy <span class="token operator">=</span> obj <span class="token keyword">instanceof</span> <span class="token class-name">Array</span> <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      copy<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">typeof</span> obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">&quot;object&quot;</span> <span class="token operator">?</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> copy<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#深拷贝与浅拷贝" title="深拷贝与浅拷贝">深拷贝与浅拷贝</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#通过引用来比较" title="通过引用来比较">通过引用来比较</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#object-assign" title="Object.assign">Object.assign</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#深层克隆" title="深层克隆">深层克隆</a></div></div></div></div> <footer class="footer" data-v-fdbf4940><div class="footer-left-wrap" data-v-fdbf4940><ul class="contact" data-v-fdbf4940><li class="contact-item" data-v-fdbf4940><a href="https://github.com/khjLOVEzlp" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-fdbf4940><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-fdbf4940><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-fdbf4940></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-fdbf4940><ul class="copyright" data-v-fdbf4940><li class="copyright-item" data-v-fdbf4940><a href="/2020/11/18/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/.html" class="nav-link" data-v-fdbf4940>MIT Licensed | Copyright © 2018-present Vue.js</a></li></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.66d3535f.js" defer></script><script src="/assets/js/6.26d0b161.js" defer></script><script src="/assets/js/3.de88a05b.js" defer></script><script src="/assets/js/21.457e2915.js" defer></script>
+  </body>
+</html>
